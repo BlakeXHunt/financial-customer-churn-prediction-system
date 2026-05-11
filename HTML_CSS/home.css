@@ -80,9 +80,15 @@
    padding-right: 15px;
  }
 
- .navbar .nav-logo .logo-text {
-   color: var(--white-color);
-   font-size: var(--font-size-xl);
+ .navbar .logo {
+   display: flex;
+   align-items: center;
+   gap: 0px;
+   
+   
+ }
+ .logo-icon{
+  padding-right: 2px;
  }
 
  .navbar .navbar-items .item {
@@ -99,11 +105,13 @@
    background: rgb(255, 255, 255);
  }
 
- .navbar .nav-logo .logo-text {
+ .navbar .logo .logo-text {
    color: var(--white-color);
    font-size: var(--font-size-xl);
    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-   padding-left: 20px;
+   padding-left: 10px;
+   align-items: center;
+   font-weight: 550;
  }
 
  .navbar .start-btn {
@@ -292,7 +300,7 @@
    opacity: 1;
    color: #22cd6e;
    font-weight: 300;
-   padding-left: 85px;
+   padding-left: 109px;
    font-size: 1.8rem;
    padding-top: 21px;
    font-family: 'Times New Roman', Times, serif;
@@ -300,20 +308,70 @@
  }
 
  .reveal-container {
-   max-width: 764px;
-   margin: 0 300px;
-   padding: 61px 60px;
-   margin-left: 25px;
+   display: flex;
+   flex-wrap: wrap;
+   align-items: flex-start;
+   justify-content: space-between;
+   width: 100%;
+   padding: 30px 160px 90px 109px ;
+   
+ }
 
+ .reveal-container h1 {
+   flex: 1 1 58%;
+   min-width: 300px;
+   padding-right: 20px;
+ }
+
+ .reveal-images {
+   position: relative;
+   width: 320px;
+   min-height: 340px;
+   margin-left: 100px;
+   margin-top: 50px;
+   
+ }
+
+
+ .reveal-images img {
+   position: absolute;
+   width: 390px;
+   height: 230px;
+   border-radius: 16px;
+   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+   transition: transform 0.35s ease, box-shadow 0.35s ease;
+   cursor: pointer;
+   
+   
+ }
+
+ .reveal-images img:first-child {
+   top: 0;
+   right: 0;
+   transform: rotate(8deg);
+   z-index: 2;
+ }
+
+ .reveal-images img:last-child {
+   top: 90px;
+   left: 0;
+   transform: rotate(-2deg);
+   z-index: 1;
+ }
+
+ .reveal-images img:hover {
+   transform: rotate(0deg) scale(1.06) translateY(-5px);
+   z-index: 4;
+   box-shadow: 0 26px 56px rgba(0, 0, 0, 0.5);
  }
 
  .reveal span {
-   display: flexbox;
+   display: inline-block;
    color: white;
    font-size: 1.2rem;
    font-family: "Montserrat", sans-serif;
  }
-
+/* stylng fourth section */
  .fourth-section {
    background: #e8edf2 100%;
 
@@ -375,8 +433,9 @@
    border-color: rgb(197, 177, 177);
  }
 
+/* styling fifth section */
  .fifth {
-   min-height: 900px;
+   min-height: 1000px;
    background: #000000 100%;
 
  }
@@ -404,24 +463,86 @@
 
  .fifth .security-container {
    color: rgb(255, 255, 255);
-   max-width: 764px;
-   margin: 102px 0;
-   margin-left: auto;
+   max-width: 850px;
+   margin: 0;
    display: block;
    font-size: 1.2rem;
    font-family: 'Times New Roman', Times, serif;
    line-height: 1.8;
+   margin-top: 20px;
+   
+ }
+
+ .fifth .security-row {
+   display: flex;
+   align-items: flex-start;
+   justify-content: center;
+   gap: 130px;
+   max-width: 1200px;
+   margin: 50px auto 0;
+   flex-wrap: wrap;
+   
+ }
+
+ .fifth .security-media {
+   flex: 0 0 auto;
+   max-width: 520px;
+   /* min-width: 280px; */
+ }
+
+ .fifth .security-media video {
+   width: 520px;
+   height: 420px;
+   border-radius: 25px;
+   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+   display: block;
+   padding-bottom: 20px;
+   
+ }
+
+ .fifth .security-text {
+   flex: 1 1 420px;
+   min-width: 320px;
  }
 
  .option {
    max-width: 700px;
-   margin: auto;
+   margin: 40px auto 0;
    display: flex;
    flex-direction: row;
    gap: 30px;
    justify-content: center;
    padding-left: 124px;
+   margin-top: 100px;
  }
+
+ @media (max-width: 980px) {
+   .fifth .security-row {
+     flex-direction: column;
+     align-items: center;
+     margin-top: 40px;
+   }
+
+   .fifth .security-media,
+   .fifth .security-text {
+     min-width: 100%;
+     flex: 1 1 100%;
+   }
+
+   .option {
+     flex-direction: column;
+     padding-left: 0;
+     width: 100%;
+   }
+ }
+
+ @media (max-width: 560px) {
+   .fifth .security-container {
+     font-size: 1.05rem;
+     line-height: 1.7;
+   }
+ }
+
 
  .option-item {
    margin-bottom: 0px;
@@ -484,7 +605,7 @@
 
  .slider-container {
    position: relative;
-   /* max-height: 40px; */
+   
  }
 
  .slider-container .slider {
@@ -501,7 +622,7 @@
    height: 100%;
    width: 100%;
    transition: transform 0.8s ease-in-out;
-   /* animation: slider 30s ease-in-out infinite alternate; */
+   
  }
 
  .slider-container #slider-img1 {
@@ -512,21 +633,21 @@
  }
 
  .slider-container #slider-img2 {
-   background-image: url("Screenshot\ 2026-02-15\ 171030.png");
+   background-image: url("dashboard.jpeg");
    background-position: center;
    background-size: cover;
    background-repeat: no-repeat;
  }
 
  .slider-container #slider-img3 {
-   background-image: url("Screenshot\ 2026-02-15\ 171405.png");
+   background-image: url("fig1.jpeg");
    background-position: center;
    background-size: cover;
    background-repeat: no-repeat;
  }
 
  .slider-container #slider-img4 {
-   background-image: url("Screenshot\ 2026-02-15\ 182444.png");
+   background-image: url("fig2.jpeg");
    background-position: center;
    background-size: cover;
    background-repeat: no-repeat;
@@ -545,7 +666,7 @@
  }
 
  .slider-container .button-holder .button1 {
-   background-color: white;
+   background-color: rgb(10, 10, 11);
    height: 10px;
    width: 10px;
    border-radius: 10px;
@@ -561,7 +682,7 @@
  }
 
  .slider-container .button-holder .button2 {
-   background-color: white;
+   background-color: rgb(10, 10, 11);
    height: 10px;
    width: 10px;
    border-radius: 10px;
@@ -577,7 +698,7 @@
  }
 
  .slider-container .button-holder .button3 {
-   background-color: white;
+   background-color: rgb(10, 10, 11);
    height: 10px;
    width: 10px;
    border-radius: 10px;
@@ -593,7 +714,7 @@
  }
 
  .slider-container .button-holder .button1 {
-   background-color: white;
+   background-color:  rgb(10, 10, 11);
    height: 10px;
    width: 10px;
    border-radius: 10px;
@@ -604,7 +725,7 @@
  }
 
  .slider-container .button-holder .button4 {
-   background-color: white;
+   background-color:  rgb(10, 10, 11);
    height: 10px;
    width: 10px;
    border-radius: 10px;
@@ -634,6 +755,7 @@
  .slider-container .button4:hover {
    background-color: #929090;
  }
+
 
  /* styling footer */
  .footer {
@@ -744,3 +866,14 @@
    border-top: 1px solid #eee;
    padding-top: 15px;
  }
+ /* styling logo */
+.logo-icon img{
+  width: 34px;
+  height: 34px;
+  display: block;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid rgba(255,255,255,0.12);
+  justify-content: center;
+  align-items: center;
+}
